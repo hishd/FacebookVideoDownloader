@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_top"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/downloader" />
+
+    <TextView
+        android:id="@+id/lbl_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Enter video URL you want to download"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbl_caption"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:hint="Paste URL here" />
+
+    <Button
+        android:id="@+id/btnDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtURL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="#509F24"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="download"
+        android:textColor="#FFF" />
+
+    <RelativeLayout
+        android:id="@+id/layoutRootBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnDownload">
+
+        <TextView
+            android:id="@+id/lbl_title_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Title"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lbl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_title_caption"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Video Title"
+            android:textColor="#24A31F"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lbl_title"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnDownSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#2A9517"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Download in SD"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/btnDownHD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnDownSD"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="#2A671C"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Download in HD"
+                android:textColor="#FFF" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
