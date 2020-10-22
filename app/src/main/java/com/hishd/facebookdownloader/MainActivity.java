@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.d("ENTERED_URL",binding.txtURL.getText().toString());
                 if(binding.txtURL.getText().toString().isEmpty()){
                     Toast.makeText(MainActivity.this,"URL is empty", Toast.LENGTH_LONG).show();
                     return;
@@ -104,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
                             result = new JSONObject(response);
                             if(result.has("ERROR")) {
                                 jsonArray = result.getJSONArray("ERROR");
-                                Toast.makeText(MainActivity.this, jsonArray.getString(1), Toast.LENGTH_LONG).show();
+                                result = jsonArray.getJSONObject(0);
+                                Toast.makeText(MainActivity.this, result.getString("err_msg"), Toast.LENGTH_LONG).show();
                             } else  {
                                 binding.layoutRootBottom.setVisibility(View.VISIBLE);
                                 jsonArray = result.getJSONArray("RESULT");
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams()
                     {
-                        Map<String, String>  params = new HashMap<String, String>();
+                        Map<String, String>  params = new HashMap<>();
                         params.put("url", binding.txtURL.getText().toString());
                         return params;
                     }
